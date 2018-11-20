@@ -3,6 +3,7 @@
 
 Deck::Deck()
 {
+
 	bool isNotNumber = false;
 	for (int i = 1; i <= 13; i++) {
 		//11 이상일 경우 숫자가 아님을 표시
@@ -16,7 +17,10 @@ Deck::Deck()
 
 Card Deck::pickOneCard()
 {
-	return this->cardSet.pop_back;
+	std::list<Card>::iterator itr;
+	itr = cardSet.begin();
+
+	return *itr;
 	/*
 	//임의로 한 개의 카드를 추출
 	//무작위성을 보장하기 위해 상위 객체의 shuffle 기능 사용

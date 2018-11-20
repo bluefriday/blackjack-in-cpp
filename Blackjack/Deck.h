@@ -3,12 +3,12 @@
 #ifndef DECK_H
 #define DECK_H
 #include "Card.h"
-#include <vector>
+#include <list>
 
 class Deck
 {
 public:
-	std::vector<Card> cardSet;
+	std::list<Card> cardSet;
 	Deck();
 	Card pickOneCard();
 };

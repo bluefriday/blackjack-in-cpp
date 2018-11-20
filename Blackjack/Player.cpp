@@ -5,8 +5,8 @@
 Player::Player(Deck deck)
 {
 	this->playerStatus = "hit";
-	myHand.push_back(deck.pickOneCard);
-	myHand.push_back(deck.pickOneCard);
+	myHand.push_back(&deck.pickOneCard);
+	//myHand.push_back(&deck.pickOneCard);
 }
 
 void Player::hit(Deck deck) 
@@ -23,12 +23,13 @@ void Player::showMyCard()
 {
 	int num = 0;
 	std::string finalNum = "";
+	std::list<Card>::iterator itr;
 
 	std::cout << this->playerType + "ÀÇ Ä«µå :" << std::endl;
 
-	for (int i = 0; i < myHand.size; i++)
+	for (itr=myHand.begin() ; itr != myHand.end() ; itr++)
 	{
-		Card card = myHand.pop_back;
+		Card card = *itr;
 		num = card.number;
 
 		if (num == 11)		{	finalNum = "[J]";		}
