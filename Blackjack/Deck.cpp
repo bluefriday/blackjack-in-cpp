@@ -1,12 +1,12 @@
 #include "pch.h"
 #include "Deck.h"
+#include <random>
 
 Deck::Deck()
 {
-
 	bool isNotNumber = false;
 	for (int i = 1; i <= 13; i++) {
-		//11 ÀÌ»óÀÏ °æ¿ì ¼ıÀÚ°¡ ¾Æ´ÔÀ» Ç¥½Ã
+		//11 ì´ìƒì¼ ê²½ìš° ìˆ«ìê°€ ì•„ë‹˜ì„ í‘œì‹œ
 		if (i == 11) { isNotNumber = true; }
 		else { isNotNumber = false; }
 
@@ -17,20 +17,30 @@ Deck::Deck()
 
 Card Deck::pickOneCard()
 {
+	if (cardSet.size() == 0) {
+	//ì¹´ë“œê°€ ì—†ëŠ” ê²½ìš° ì¼ë‹¨ ì˜ˆì™¸ì²˜ë¦¬ë³´ë‹¤, 0ìœ¼ë¡œ ë¦¬í„´
+		Card no_card(0);
+		return no_card;
+	}
+
+	//std::cout << "now card size is : " + std::to_string(cardSet.size()) << std::endl;
+
 	std::list<Card>::iterator itr;
 	itr = cardSet.begin();
+	
+	std::random_device rd; 
+	std::mt19937 mersenne(rd()); // Create a mersenne twister, seeded using the random device // Create a reusable random number generator that generates uniform numbers between 1 and 6 
+	std::uniform_int_distribution<> die(0, cardSet.size()-1);
 
-	return *itr;
-	/*
-	//ÀÓÀÇ·Î ÇÑ °³ÀÇ Ä«µå¸¦ ÃßÃâ
-	//¹«ÀÛÀ§¼ºÀ» º¸ÀåÇÏ±â À§ÇØ »óÀ§ °´Ã¼ÀÇ shuffle ±â´É »ç¿ë
-	//ÃßÃâÇÑ Ä«µå´Â µ¦¿¡¼­ »èÁ¦
-	//ÃßÃâÇÑ Ä«µå¸¦ ¹İÈ¯
-	return pickedCard;
-	}
-	else {
-		return new Card(0);
-	}
-	*/
+	int random_index = die(mersenne);
 
+	//std::cout << random_index;
+	std::advance(itr, random_index);
+
+	Card ret_card(itr->number);
+	cardSet.remove(*itr);
+
+	//std::cout << "now card size is : " + std::to_string(cardSet.size()) << std::endl;
+
+	return ret_card;
 }
