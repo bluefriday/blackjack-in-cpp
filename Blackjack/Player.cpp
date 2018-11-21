@@ -10,7 +10,18 @@ Player::Player(Deck* deck)
 
 void Player::hit(Deck* deck)
 {
-	this->playerStatus = "hit";
+	Card givenCard = deck->pickOneCard();
+
+	myHand.push_back(givenCard);
+
+	if (this->countMyScore() > 21) {
+		this->playerStatus = "burst";
+		std::cout << "---------------------------------------------" << std::endl;
+		std::cout << this->playerType + " lose. (burst!!) " << std::endl;
+	}
+	else {
+		this->playerStatus = "hit";
+	}
 }
 
 void Player::stay()
@@ -24,7 +35,7 @@ void Player::showMyCard()
 	std::string finalNum = "";
 	std::list<Card>::iterator itr;
 
-	std::cout << this->playerType + "의 카드는 :";
+	std::cout << this->playerType + "'s Card :";
 
 	for (itr = myHand.begin(); itr != myHand.end(); itr++)
 	{

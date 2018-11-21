@@ -30,6 +30,9 @@
     <ClInclude Include="Deck.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Dealer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -48,6 +51,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Deck.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Dealer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

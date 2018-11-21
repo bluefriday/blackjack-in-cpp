@@ -6,7 +6,6 @@ Deck::Deck()
 {
 	bool isNotNumber = false;
 	for (int i = 1; i <= 13; i++) {
-		//11 이상일 경우 숫자가 아님을 표시
 		if (i == 11) { isNotNumber = true; }
 		else { isNotNumber = false; }
 
@@ -18,7 +17,6 @@ Deck::Deck()
 Card Deck::pickOneCard()
 {
 	if (cardSet.size() == 0) {
-	//카드가 없는 경우 일단 예외처리보다, 0으로 리턴
 		Card no_card(0);
 		return no_card;
 	}
