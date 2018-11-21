@@ -1,4 +1,3 @@
-
 #pragma once
 
 #ifndef PLAYER_H
@@ -11,10 +10,11 @@ public:
 	std::string playerType;
 	std::string playerStatus;
 	std::list<Card> myHand;
-	Player(Deck);
-	void hit(Deck);
+	Player(Deck*);
+	void hit(Deck*);
 	void stay();
 	void showMyCard();
+	int countMyScore();
 };
 
 #endif
