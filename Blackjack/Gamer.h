@@ -6,7 +6,7 @@
 class Gamer : public Player
 {
 public:
-	Gamer(Deck);
+	Gamer(Deck*);
 };
 
 #endif
