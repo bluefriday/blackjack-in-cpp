@@ -79,6 +79,8 @@ void Dealer::askToGamer(Deck* deck, Gamer* gamer)
 		}
 	}
 
+	system("CLS");
+
 	if (gamerChoice == 1) 
 	{
 		gamer->hit(deck);
@@ -96,7 +98,6 @@ void Dealer::dealerAction(Deck* deck)
 
 	if (totalValue >= 17) {
 		//17점 이상이면 딜러는 카드를 추가할 수 없음
-		std::cout << "DEBUG!! dealer stay" << std::endl;
 		this->stay();
 	}
 	else {
