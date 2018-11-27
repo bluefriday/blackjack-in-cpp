@@ -13,7 +13,7 @@ void Dealer::showMyCard()
 	std::string finalNum = "";
 	std::list<Card>::iterator itr;
 
-	std::cout << this->playerType + "'s Card :";
+	std::cout << this->playerType + "의 카드 :";
 
 	for (itr = myHand.begin(); itr != myHand.end(); itr++)
 	{
@@ -40,7 +40,7 @@ void Dealer::showMyCard(std::string flag)
 	std::string finalNum = "";
 	std::list<Card>::iterator itr;
 
-	std::cout << this->playerType + "'s Card :";
+	std::cout << this->playerType + "의 카드 :";
 
 	for (itr = myHand.begin(); itr != myHand.end(); itr++)
 	{
@@ -67,9 +67,9 @@ void Dealer::askToGamer(Deck* deck, Gamer* gamer)
 
 	while (validation) 
 	{
-		std::cout << "Your's turn" << std::endl;
-		std::cout << "(1) hit. draw an extra card. [input 1]" << std::endl;
-		std::cout << "(2) stay. You will not take. [input 2]" << std::endl;
+		std::cout << "당신의 차례입니다." << std::endl;
+		std::cout << "(1) 카드를 더 뽑습니다.(hit) [input 1]" << std::endl;
+		std::cout << "(2) 카드를 더이상 뽑지 않습니다.(stay) [input 2]" << std::endl;
 		std::cout << "Input : " ;
 		std::cin >> gamerChoice;
 
@@ -114,14 +114,14 @@ void Dealer::checkGameResult(Gamer* gamer)
 
 	if (gamer_score > dealer_score) 
 	{
-		std::cout << "Congratulation!! 당신의 승리입니다." << std::endl;
+		std::cout << "축하합니다!! 당신의 승리입니다." << std::endl;
 	}
 	else if (gamer_score < dealer_score) 
 	{
-		std::cout << "Oh.. Dealer win." << std::endl;
+		std::cout << "딜러의 승리입니다." << std::endl;
 	}
 	else 
 	{
-		std::cout << "This game is draw.." << std::endl;
+		std::cout << "이번 게임은 무승부입니다." << std::endl;
 	}
 }

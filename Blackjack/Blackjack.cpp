@@ -23,7 +23,7 @@ int main()
 
 	while (isGameGo)
 	{
-		std::cout << "Please check all cards on field." << std::endl << std::endl ;
+		std::cout << "필드 위의 카드를 확인해 주세요." << std::endl << std::endl ;
 		gamer.showMyCard();
 		dealer.showMyCard();
 
@@ -48,7 +48,7 @@ int main()
 	}
 
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "Game end." << std::endl;
+	std::cout << "게임이 종료되었습니다." << std::endl;
 	gamer.showMyCard();
 	dealer.showMyCard("End of Game");
 	std::cout << "---------------------------------------------" << std::endl;

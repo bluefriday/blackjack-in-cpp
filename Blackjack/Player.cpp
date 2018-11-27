@@ -35,7 +35,7 @@ void Player::showMyCard()
 	std::string finalNum = "";
 	std::list<Card>::iterator itr;
 
-	std::cout << this->playerType + "'s Card :";
+	std::cout << this->playerType + "ÀÇ Ä«µå :";
 
 	for (itr = myHand.begin(); itr != myHand.end(); itr++)
 	{
