@@ -18,7 +18,7 @@ int main()
 	Dealer dealer(p_deck);
 
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "Start a game..." << std::endl;
+	std::cout << "블랙잭 게임을 시작합니다." << std::endl;
 
 
 	while (isGameGo)

@@ -114,7 +114,7 @@ void Dealer::checkGameResult(Gamer* gamer)
 
 	if (gamer_score > dealer_score) 
 	{
-		std::cout << "Congratulatio!! You win." << std::endl;
+		std::cout << "Congratulation!! 당신의 승리입니다." << std::endl;
 	}
 	else if (gamer_score < dealer_score) 
 	{
