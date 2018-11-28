@@ -13,6 +13,7 @@ public:
 	void askToGamer(Deck*, Gamer*);
 	void dealerAction(Deck*);
 	void checkGameResult(Gamer*);
+	bool isDigit(std::string);
 };
 
 #endif

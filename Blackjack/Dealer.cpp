@@ -63,6 +63,7 @@ void Dealer::askToGamer(Deck* deck, Gamer* gamer)
 {
 	//Scanner input = new Scanner(new InputStreamReader(System.in));
 	bool validation = true;
+	std::string unCheckInput = "";
 	int gamerChoice = 0;
 
 	while (validation) 
@@ -71,12 +72,34 @@ void Dealer::askToGamer(Deck* deck, Gamer* gamer)
 		std::cout << "(1) 카드를 더 뽑습니다.(hit) [input 1]" << std::endl;
 		std::cout << "(2) 카드를 더이상 뽑지 않습니다.(stay) [input 2]" << std::endl;
 		std::cout << "Input : " ;
-		std::cin >> gamerChoice;
 
-		if (gamerChoice == 1 || gamerChoice == 2) 
+		try  //숫자 입력에 문자열 예외 체크를 위하여 처음부터 문자열로 받고 검사
 		{
-			validation = false;
+			std::cin >> unCheckInput;
+
+			if ( !(this->isDigit(unCheckInput)) ) //숫자가 아니면 문자열 타입으로 예외 throw
+			{
+				throw unCheckInput;
+			}
+			else  //숫자 입력이 맞으면, 해당 문자열을 숫자로 반환하여 적절한 숫자인지 체크
+			{
+				gamerChoice = std::stoi(unCheckInput);
+				if (gamerChoice != 1 && gamerChoice != 2)
+				{
+					throw gamerChoice;
+				}
+			}
+			validation = false; //try 구문의 끝에 도달하면 예외가 없으므로 종료 flag 설정
 		}
+		catch (std::string errorInput)
+		{
+			std::cout << "WARN : 문자를 입력할 수는 없습니다." << std::endl;
+		}
+		catch (int errorInput)
+		{
+			std::cout << "WARN : 1, 2 이외의 입력할 수는 없습니다." << std::endl;
+		}
+
 	}
 
 	system("CLS");
@@ -125,4 +148,14 @@ void Dealer::checkGameResult(Gamer* gamer)
 	{
 		std::cout << "이번 게임은 무승부입니다." << std::endl;
 	}
+}
+
+bool Dealer::isDigit(std::string str)
+{
+	for (unsigned int i = 0; i < str.length(); i++)
+	{
+		if (str.at(i) < '0' || str.at(i) > '9')
+			return false;
+	}
+	return true;
 }
