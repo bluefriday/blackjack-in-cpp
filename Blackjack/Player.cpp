@@ -42,12 +42,12 @@ void Player::showMyCard()
 		Card card = *itr;
 		num = card.number;
 
-		if (num == 11) { finalNum = "[J]"; }
-		else if (num == 12) { finalNum = "[Q]"; }
-		else if (num == 13) { finalNum = "[K]"; }
-		else { finalNum = "[" + std::to_string(num) + "]"; }
+		if (num == 11) { finalNum = "J"; }
+		else if (num == 12) { finalNum = "Q"; }
+		else if (num == 13) { finalNum = "K"; }
+		else { finalNum = std::to_string(num); }
 
-		std::cout << finalNum + " ";
+		std::cout << "[" + card.type + " " + finalNum + "]";
 	}
 	std::cout << std::endl;
 }
