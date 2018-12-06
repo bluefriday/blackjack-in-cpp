@@ -39,28 +39,9 @@ void Dealer::showMyCard()
 
 void Dealer::showMyCard(std::string flag)
 {
-	int num = 0;
-	std::string finalNum = "";
-	std::list<Card>::iterator itr;
-
-	std::cout << this->playerType + "의 카드 :";
-
-	for (itr = myHand.begin(); itr != myHand.end(); itr++)
-	{
-		Card card = *itr;
-		num = card.number;
-
-		if (num == 11) { finalNum = "J"; }
-		else if (num == 12) { finalNum = "Q"; }
-		else if (num == 13) { finalNum = "K"; }
-		else { finalNum = std::to_string(num); }
-
-		std::cout << "[" + card.type + " " + finalNum + "]";
-	}
-	std::cout << std::endl;
+	//게임이 종료된 경우는 부모의 함수를 호출하여 자신의 모든 카드를 다 보여줌
+	Player::showMyCard();
 }
-
-
 
 void Dealer::askToGamer(Deck* deck, Gamer* gamer)
 {

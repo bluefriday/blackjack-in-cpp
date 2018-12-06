@@ -24,14 +24,14 @@
     <ClInclude Include="Gamer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Card.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Deck.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Dealer.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -41,19 +41,19 @@
     <ClCompile Include="Blackjack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Gamer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Card.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Deck.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Dealer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Card.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
